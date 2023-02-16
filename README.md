@@ -13,6 +13,11 @@ spring authorization server 1.0 版本的自定义分离授权尝试:
     <li> resource 需要访问的资源服务器</li>
 </ul>
 
+#### 认证授权相关的几个核心类
+* OAuth2AuthorizationEndpointFilter
+* OAuth2TokenEndpointFilter
+* OAuth2AuthorizationCodeAuthenticationConverter
+
 ### 参考文档
 过程中的参考文档如下:
 

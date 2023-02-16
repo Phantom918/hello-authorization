@@ -50,21 +50,13 @@ public class IndexController {
         log.info("response: {}", response);
         JSONObject body = JSONUtil.parseObj(response.body());
         log.info("body: {}", body);
-        String access_token = body.getStr("access_token");
-        log.info("access_token: {}", access_token);
-        String id_token = body.getStr("id_token");
-        log.info("id_token: {}", id_token);
+        String accessToken = body.getStr("access_token");
+        log.info("accessToken: {}", accessToken);
 
         HttpResponse httpResponse = HttpUtil.createGet("http://127.0.0.1:8090/messages")
-                .header("Authorization", "Bearer " + access_token)
+                .header("Authorization", "Bearer " + accessToken)
                 .execute();
         log.info("资源服务器返回信息 = {}", httpResponse);
-
-        HttpResponse httpResponse1 = HttpUtil.createGet("http://127.0.0.1:8090/messages")
-                .header("Authorization", "Bearer " + id_token)
-                .execute();
-        log.info("资源服务器返回信息1 = {}", httpResponse1);
-
 
         return httpResponse.body();
 

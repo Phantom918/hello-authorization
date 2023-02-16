@@ -1,6 +1,13 @@
 server:
   port: 9000
 
+spring:
+  datasource:
+    username: root
+    password: hjXL327918
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/security?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+
 
 logging:
   level:
@@ -9,3 +16,6 @@ logging:
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
     #org.springframework.boot.autoconfigure: DEBUG
+    #org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+    org.springframework.security.web.FilterChainProxy: trace # 过滤器执行顺序
+    org.springframework.security.web.access.ExceptionTranslationFilter: trace #异常处理
